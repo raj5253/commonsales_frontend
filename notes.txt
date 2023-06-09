@@ -1,0 +1,18 @@
+Before I start let me. mention. few points.
+* react. Redux will be used. for the selector and dispatcher.
+*I won't be using cookies. user data will be stored in the local storage as capacity of local storage is much higher than the cookies. each time users send request to server the JWD token will also be sent along in the request. Uskewa client, kajo Kanna Dekhlega..
+* For better UIS. user interfaces. OKI will. be preferring material UI. you can check the website
+* for form validation. I will be using formik, A React Library.
+to Etna to Anahe hi, Chahiye Tumko.
+
+I will be getting help from. the git clone. but this timeI'm not focusing on the same project. This time I will be focusing on hotel management, not on any online shopping cart.
+
+//rehen do, shooping hi banao abhi k liye. time kam hai.
+
+
+//phele ye sab install kar lo :
+
+npm i react-router-dom
+npm i  redux react-redux  @reduxjs/toolkit
+npm install @mui/material @emotion/react @emotion/styled
+npm i formik

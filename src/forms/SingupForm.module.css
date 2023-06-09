@@ -1,0 +1,9 @@
+.form {
+  margin: auto;
+  max-width: 30rem; /*ye do hi to chahiye*/
+
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+}

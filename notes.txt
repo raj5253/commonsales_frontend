@@ -16,3 +16,13 @@ npm i react-router-dom
 npm i  redux react-redux  @reduxjs/toolkit
 npm install @mui/material @emotion/react @emotion/styled
 npm i formik
+
+//on backend, >>npm i cors, app.use(cors())
+
+.. orders done , only simple fetch nothing else.
+cart done. localStorage + redux store
+payment... bahut locha hai.
+orders details send to backend.
+but i forgot that payment gateway should be on frontend. >> npm i @stripe/react-stripe-js @stripe/stripe-js
+
+//npm install react-loading //for loadingcircle

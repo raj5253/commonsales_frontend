@@ -1,0 +1,57 @@
+.container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.profilecontainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgb(238, 238, 240);
+}
+.profilecontainer .generalinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.profilecontainer .generalinfo .pimg img {
+  width: 13rem;
+  height: 100%;
+  border-radius: 7rem;
+}
+.profilecontainer .generalinfo .gencontact {
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profilecontainer .generalinfo .gencontact p {
+  margin: 1rem 0;
+}
+.profilecontainer .generalinfo .gencontact p span {
+  color: rgb(92, 88, 88);
+  font-weight: bold;
+}
+.profilecontainer .personalinfo .address {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -moz-column-gap: 0.2rem;
+       column-gap: 0.2rem;
+}
+.profilecontainer .personalinfo .address p span {
+  font-weight: bold;
+  color: rgb(92, 88, 88);
+}
+
+@media screen and (max-width: 500px) {
+  .profilecontainer .generalinfo {
+    display: flex;
+    flex-direction: column;
+  }
+  .profilecontainer .generalinfo .pimg {
+    text-align: center;
+  }
+}/*# sourceMappingURL=Profile.module.css.map */

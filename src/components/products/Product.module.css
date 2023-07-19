@@ -1,0 +1,42 @@
+.container {
+  max-width: 70%;
+  margin: auto;
+
+  text-align: center;
+  background-color: rgba(233, 230, 230, 0.856);
+
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.product {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-around; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.imgContainer img {
+  width: 18rem;
+  height: 100%;
+}
+
+ol {
+  list-style: none;
+}
+ol li h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+@media sreen and (max-width: 400px) {
+  .product {
+    display: flex;
+    flex-direction: column;
+  }
+  .imgContainer .image {
+    width: 10px;
+    height: 5rem;
+    /* height: 100%; */
+  }
+}

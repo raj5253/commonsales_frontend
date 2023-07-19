@@ -1,0 +1,26 @@
+.item {
+  /* background-color: rgb(216, 218, 218); */
+  /* max-width: 20rem; */
+  text-align: center;
+  padding: 0.5rem;
+
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+img {
+  border-radius: 0.5rem;
+}
+
+.prodContent {
+  text-align: center;
+}
+
+h2 {
+  color: rgb(27, 26, 26);
+  font-size: 1.5rem;
+}
+
+.prodImg img {
+  width: 100%;
+}

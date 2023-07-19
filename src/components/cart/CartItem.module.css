@@ -1,0 +1,11 @@
+.itemContainer {
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 2px 2px 2px 2px rgba(141, 141, 143, 0.39);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.itemContainer > div {
+  font-size: 1.5rem;
+  text-align: center;
+}/*# sourceMappingURL=CartItem.module.css.map */

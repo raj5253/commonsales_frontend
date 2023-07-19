@@ -1,0 +1,28 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.orderContainer {
+  h1 {
+    text-align: center;
+    padding-top: 1rem;
+    // text-transform: uppercase;
+    margin: 0 0;
+  }
+  .orderList {
+    list-style: none;
+    // background-color: skyblue;
+    padding: 0.5rem;
+
+    .listItem {
+      background-color: rgb(250, 250, 250);
+      box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+      max-width: 500px;
+      margin: 1rem auto;
+
+      text-align: center;
+      border-radius: 0.5rem;
+    }
+  }
+}

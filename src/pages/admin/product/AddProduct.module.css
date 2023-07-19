@@ -1,0 +1,33 @@
+.form {
+  max-width: 50rem;
+  margin: auto;
+  max-width: 25rem;
+  /* margin: var(--space-8) auto; */
+  /* padding: var(--space-4); */
+  /* background-color: var(--color-gray-600);
+    border-radius: var(--border-radius-medium); */
+  text-align: center;
+  background-color: rgba(206, 206, 206, 0.877);
+  padding: 1rem 2rem 1rem;
+}
+
+label {
+  text-align: left;
+}
+
+input {
+  font: inherit;
+  border-radius: 4px;
+  border: none;
+  width: 90%;
+  padding: 0.2rem;
+}
+input:focus {
+  border-radius: 0;
+}
+
+.error {
+  font-style: italic;
+  color: red;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=AddProduct.module.css.map */

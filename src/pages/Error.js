@@ -1,10 +1,12 @@
 import React from "react";
 
-const Error = () => {
+const Error = (props) => {
+  const mssg = props?.mmsg;
+  console.log(mssg);
   return (
     <div>
-      Error
-      <p>to handle diffrent error: diffrent status = diffrent mssg</p>
+      <h1> Error</h1>
+      <p>You got an error. diffrent status = {} </p>
     </div>
   );
 };

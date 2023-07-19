@@ -1,0 +1,35 @@
+.container h1 {
+  text-align: center;
+}
+
+.container .cartContainer {
+  background-color: snow;
+}
+.container .cartContainer ul {
+  list-style: none;
+}
+.container .cartContainer ul .conclusion {
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  padding-right: 3rem;
+}
+.container .cartContainer ul .conclusion div {
+  display: flex;
+  flex-direction: column;
+}
+.container .cartContainer ul .conclusion .imp {
+  font-weight: bolder;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
+}
+.container .cartContainer ul .conclusion .imp div {
+  color: rgb(3, 21, 122);
+}
+.container .cartContainer ul .orderBtn {
+  text-align: right;
+  padding-right: 3rem;
+} /*# sourceMappingURL=Cart.module.css.map */

@@ -1,0 +1,50 @@
+.container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: start;
+}
+.container .info {
+  background-color: teal;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0;
+  row-gap: 0rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+.container .info div {
+  padding-left: 2rem;
+}
+.container .info .invoice i {
+  font-size: 0.8rem;
+}
+.container .info .parentStatus {
+  padding: 0;
+  text-align: right;
+}
+.container .info .status {
+  background-color: orange;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-style: oblique;
+}
+.container .orderItems {
+  list-style: decimal;
+  font-size: 0.9rem;
+  padding-left: 2rem;
+  font-weight: bold;
+}
+.container .address {
+  text-align: right;
+  padding-right: 1rem;
+  margin: 0.5rem 0;
+}
+.container .totlprc {
+  text-align: start;
+  padding-left: 2rem;
+  padding-bottom: 1.5rem;
+}/*# sourceMappingURL=Order.module.css.map */

@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
+import NavBar from "./Navbar";
 import { Outlet } from "react-router-dom";
 
 const SharedLayout = () => {
   return (
     <>
-      <Navbar />
+      <NavBar />
       <Outlet />
       {/*outlet to render child routes   */}
     </>

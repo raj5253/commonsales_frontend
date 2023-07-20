@@ -6,7 +6,7 @@ import { authActions } from "../../store/authSlice";
 import { cartActions } from "../../store/cartSlice";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-const Navbar = () => {
+const NavBar = () => {
   const auth = useSelector((state) => state.auth);
   // const token = auth.user;
   const isAdmin = auth.isAdmin;
@@ -138,4 +138,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

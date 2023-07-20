@@ -1,5 +1,7 @@
 // import { GetRequest } from "../utils/API";
 import { productActions } from "./productSlice";
+import { Navigate } from "react-router-dom";
+
 // import axios from "axios";
 
 export const fetchProductsData = () => {
@@ -18,6 +20,11 @@ export const fetchProductsData = () => {
       dispatch(productActions.replaceData(productData)); //a reducer in productSlice
     } catch (error) {
       console.log("error in ProductActions.js", error);
+      dispatch(productActions.replaceData("error")); //just for  now
+      // <Navigate
+      //   to={"/error"}
+      //   state={{ mssg: "could not connect to the server", code: "503" }}
+      // />;
     }
   };
 };

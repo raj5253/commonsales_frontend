@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Failure = () => {
   return (
-    <div>
+    <div style={{ textAlign: "center", paddingTop: "3rem" }}>
       <h2>Oops! your transaction failed.</h2>
       <h2>Failed to place your order.</h2>
       <p>

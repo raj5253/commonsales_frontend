@@ -1,0 +1,33 @@
+.container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  margin: 2rem auto;
+  max-width: 400px;
+  border-radius: 0.5rem;
+
+  background-color: rgb(231, 233, 234);
+  box-shadow: 3px 3px 5px gray;
+  padding: 2rem;
+
+  h2 {
+    font-size: 1.2rem;
+  }
+  .detail {
+    flex-direction: column;
+    padding: 0.5rem;
+
+    p {
+      font-size: 0.8rem;
+      padding: 0.5rem;
+      font-weight: 200;
+      span {
+        font-weight: bold;
+        color: rgb(49, 49, 49);
+      }
+
+      Link {
+        text-decoration: none;
+      }
+    }
+  }
+}

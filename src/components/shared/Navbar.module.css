@@ -10,7 +10,6 @@ nav {
   background-color: rgb(3, 3, 62);
   padding: 15px 50px; /* top-bottom left-right*/
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-  /* width: 100vw; */
 }
 nav .icon {
   text-decoration: none;
@@ -42,9 +41,7 @@ nav #navbar li .navItem:hover,
 nav #navbar li .navItem.active {
   color: rgb(0, 248, 137);
 }
-/*nav #navbar li .navItem:hover::after, */ /*underline on hover removed*/
-nav #navbar li .navItem:hover::after, /*underline on hover removed*/
-nav #navbar li .active::after {
+nav #navbar li .navItem:hover::after, nav #navbar li .active::after {
   content: "";
   width: 30%;
   height: 2px;
@@ -99,4 +96,4 @@ nav #navbar li .active::after {
     /*dont give space bw them */
     right: 0;
   }
-} /*# sourceMappingURL=NavBar.module.css.map */
+}/*# sourceMappingURL=NavBar.module.css.map */

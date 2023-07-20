@@ -45,8 +45,8 @@ const cartSlice = createSlice({
         state.totalPrice += newItem.price * incrementQuantity;
         // console.log(state.totalPrice, state.totalQuantity);
       }
-      localStorage.setItem("cart", JSON.stringify(state)); //neede.d. to allow synchronisation to other tabs.
-      console.log(localStorage);
+      localStorage.setItem("cart", JSON.stringify(state)); //needed. to allow synchronisation to other tabs.
+      // console.log(localStorage);  //debug
     },
     setShow(state) {
       state.showCart = !state.showCart; //toggle
@@ -67,6 +67,7 @@ const cartSlice = createSlice({
         state.totalQuantity--;
         state.totalPrice -= existingItem.product.price;
       }
+      localStorage.setItem("cart", JSON.stringify(state)); //synchro
     },
     replaceData(state, action) {
       //will be used when fetching from server
@@ -75,6 +76,8 @@ const cartSlice = createSlice({
       state.items = action.payload.items;
       state.totalPrice = action.payload.totalPrice;
       state.totalQuantity = action.payload.totalQuantity;
+
+      localStorage.setItem("cart", JSON.stringify(state)); //synchro
     },
   },
 });

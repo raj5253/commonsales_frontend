@@ -6,6 +6,7 @@ import CartItem from "./CartItem";
 import styles from "./Cart.module.css";
 import { Button } from "@mui/material";
 import NotLogedIn from "../shared/NotLogedIn";
+import axios from "axios";
 
 // cart data gets stored in local storage
 const Cart = () => {
@@ -15,57 +16,32 @@ const Cart = () => {
 
   const navigate = useNavigate();
 
-  // if (token === undefined) {
-  //   alert("token is not there");
-  //   navigate("/login");
-  // }
-  const [fetchedCart, setFetchedCart] = useState(null);
+  const [fetchedCart, setFetchedCart] = useState("");
   const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
   // actual part begins::
   useEffect(() => {
     let data;
-    const fetchCart = async () => {
-      const resp = await fetch(`${BASE_URL}/cart`, {
+    axios
+      .get(`${BASE_URL}/cart`, {
         headers: {
           "x-access-token": localStorage.getItem("token"),
         },
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === "ok") {
+          // setFetchedCart(data.cart);
+          setFetchedCart("ok");
+        }
+      })
+      .catch((error) => {
+        console.log("failed in fetching order! from backend!", error);
+        navigate("/error", {
+          state: { mssg: "could not connect to the server", code: "503" },
+        });
       });
-      data = await resp.json();
-      if (data.status === "ok") {
-        setFetchedCart(data.cart);
-      }
-      // console.log(data);  //debug
-    };
-    try {
-      fetchCart();
-      // console.log(cart); // debug
-    } catch (error) {
-      console.log("failed in fetching order! from backend!", error);
-      return;
-    }
-  }, [cart, user]);
-
-  const placeOrder = async (e) => {
-    e.preventDefault();
-
-    try {
-      const res = await fetch(`${BASE_URL}/orders`, {
-        headers: {
-          "content-Type": "application/json",
-          "x-access-token": localStorage.getItem("token"),
-        },
-        method: "POST",
-        body: JSON.stringify(cart),
-      });
-
-      const data = await res.json();
-      console.log(data);
-    } catch (error) {
-      console.log("failed in placing your order!", error);
-      navigate("/failure");
-    }
-  };
+  }, []);
 
   const placeOrders = () => {
     //now i will use this.
@@ -77,7 +53,7 @@ const Cart = () => {
 
       {!token && <NotLogedIn />}
 
-      {token && (
+      {token && fetchedCart && (
         <section className={styles.cartContainer}>
           {cart.totalQuantity > 0 && (
             <ul>
@@ -108,7 +84,7 @@ const Cart = () => {
               </section>
             </ul>
           )}
-          {!cart.totalQuantity && (
+          {cart.totalQuantity === 0 && (
             <div style={{ textAlign: "center", paddingTop: "1rem" }}>
               <h3>{"Your cart is empty"}</h3>
               <p>

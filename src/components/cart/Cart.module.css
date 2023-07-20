@@ -1,7 +1,21 @@
 .container h1 {
   text-align: center;
 }
-
+.container .errorBlock {
+  padding: 1rem;
+  text-align: center;
+}
+.container .errorBlock .error {
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container .errorBlock .mssg {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.container .errorBlock .mssg Link {
+  text-decoration: none;
+}
 .container .cartContainer {
   background-color: snow;
 }
@@ -32,4 +46,4 @@
 .container .cartContainer ul .orderBtn {
   text-align: right;
   padding-right: 3rem;
-} /*# sourceMappingURL=Cart.module.css.map */
+}/*# sourceMappingURL=Cart.module.css.map */

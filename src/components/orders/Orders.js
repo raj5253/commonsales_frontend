@@ -15,37 +15,36 @@ const Orders = () => {
 
   const navigate = useNavigate();
 
-  // if (!token) {
-  //   navigate("/login");
-  // }
-
   const [fetchedOrder, setFetchedOrders] = useState(null);
   const BASE_URL = process.env.REACT_APP_SERVER_URL;
   //here
   useEffect(() => {
     let data;
-    const fetchOrder = async () => {
-      const resp = await fetch(`${BASE_URL}/orders`, {
+    if (!token) return;
+
+    axios
+      .get(`${BASE_URL}/orders`, {
         headers: {
           "x-access-token": localStorage.getItem("token"), //when token is not, there still useEffectwill call server.such req should b handled at server site.
         },
+      })
+      .then((res) => {
+        if (res.data.status === "ok") {
+          setFetchedOrders(res.data.orders);
+        } else if (res.data.status === "error") {
+          console.log(data.mssg);
+        }
+      })
+      .catch((err) => {
+        const mssg = "Failed in fetching order! from backend!";
+        console.log(mssg, err);
+        navigate("/error", {
+          state: {
+            mssg: "could not connect to the server. " + mssg,
+            code: "503",
+          },
+        });
       });
-      data = await resp.json();
-      if (data.status === "ok") {
-        // console.log(data.mssg);
-      }
-      setFetchedOrders(data.orders);
-      console.log(data);
-    };
-    try {
-      fetchOrder();
-      // console.log(fetchedOrder); //was very much usefull
-      if (fetchedOrder?.status === "error") {
-        console.log(data.mssg);
-      }
-    } catch (error) {
-      console.log("failed in fetching order! from backend!", error);
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -66,6 +65,11 @@ const Orders = () => {
           </ul>
         )}
       </div>
+      {/* {!fetchedOrder && (
+        <div style={{ textAlign: "center" }}>
+          <p> Could not connect to the server</p>
+        </div>
+      )} */}
       {fetchedOrder?.length === 0 && (
         <div>
           <h2>{"You"}</h2>

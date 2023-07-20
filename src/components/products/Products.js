@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./Products.module.css";
 import axios from "axios";
+import Error from "../../pages/Error/Error";
 
 const Products = ({ first }) => {
   //take data from props//no not from props, instead of store.
@@ -26,7 +27,9 @@ const Products = ({ first }) => {
         .then((res) => {
           if (res.data.status === "error") {
             console.log("error from server ");
-            navigate("/error");
+            navigate("/error", {
+              state: { mssg: "server gaved error response", code: 400 },
+            });
             return;
           }
           setPrevalue(res.data.products);
@@ -35,6 +38,9 @@ const Products = ({ first }) => {
         })
         .catch((error) => {
           console.log("Error in fetching products from backend", error);
+          navigate("/error", {
+            state: { mssg: "could not connect to the server", code: "503" },
+          });
         });
     };
 
@@ -61,6 +67,7 @@ const Products = ({ first }) => {
       </section>
       <ol className={styles.prodList}>
         {products &&
+          products !== "error" &&
           products.map((item, i) => {
             return (
               <li key={item.id} className={styles.prodItem}>
@@ -78,7 +85,12 @@ const Products = ({ first }) => {
               </li>
             );
           })}
-        {!products && <div>Please wait! fetching the products</div>}
+        {!products && <div>Connecting to the server</div>}
+        {products === "error" && (
+          <div>
+            <Error code={503} mssg={"Failed to connect to the server Error"} />
+          </div>
+        )}
       </ol>
     </div>
   );

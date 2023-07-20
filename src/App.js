@@ -8,7 +8,7 @@ import SharedLayout from "./components/shared/SharedLayout";
 import Home from "./pages/Home";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
-import Error from "./pages/Error";
+import Error from "./pages/Error/Error";
 import Cart from "./components/cart/Cart";
 import Profile from "./pages/profile/Profile";
 import Orders from "./components/orders/Orders";

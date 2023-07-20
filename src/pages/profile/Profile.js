@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import styles from "./Profile.module.css";
 import profileImg from "./profilepicture.webp";
 import NotLogedIn from "../../components/shared/NotLogedIn";
+import { Navigate, useNavigate } from "react-router-dom";
 // import ReactLoading from "react-loading";
 
 const Profile = () => {
@@ -12,6 +13,8 @@ const Profile = () => {
   // const token = localStorage.getItem("token");
   const [profiledata, setProfiledata] = useState("");
   const [searching, setSearching] = useState(true);
+
+  const navigate = useNavigate();
   //use effect call
 
   const BASE_URL = process.env.REACT_APP_SERVER_URL;
@@ -32,18 +35,20 @@ const Profile = () => {
         })
         .catch((error) => {
           console.log("error while making server call", error);
+          navigate("/error", {
+            state: { mssg: "could not connect to the server", code: "503" },
+          }); //automatic route , substitute of naviage(to, state)
         });
     };
     fetchProfile();
     setSearching(false);
-  }, [token, BASE_URL]);
+  }, []);
   return (
     <div className={styles.container}>
       <h1 style={{ textAlign: "center" }}>Your profile 🧑🏽‍💼</h1>
 
       {searching && (
         <div style={{ textAlign: "center" }}>
-          {/* <ReactLoading color="blue" type="spin" /> */}
           <p>Please wait. Fetching...</p>
         </div>
       )}

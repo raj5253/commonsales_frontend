@@ -1,13 +1,18 @@
 import React from "react";
 import styles from "./CartItem.module.css";
 import { Button } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cartSlice";
 
 const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
   const decrQtyInnCart = (e) => {
     e.preventDefault();
+    dispatch(cartActions.removeFromCart(item.product.id));
   };
   const incrQtyInnCart = (e) => {
     e.preventDefault();
+    dispatch(cartActions.addToCart({ pdata: item.product, quantity: 1 }));
   };
 
   return (

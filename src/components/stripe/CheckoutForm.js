@@ -13,18 +13,21 @@ export default function CheckoutForm() {
 
   const [message, setMessage] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [email, setEmail] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) {
       return;
     }
+    console.log("hello");
+
     setIsProcessing(true);
 
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}/success`,
+        return_url: `${window.location.origin}/success`, //window.location.origin gives the website domain
       },
     });
     if (error) {
@@ -34,7 +37,9 @@ export default function CheckoutForm() {
     } else {
       setMessage("Unexpected state");
     }
+
     setIsProcessing(false);
+    console.log("hello");
   };
 
   return (

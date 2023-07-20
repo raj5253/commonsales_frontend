@@ -10,9 +10,7 @@ const PlaceOrder = () => {
   const cart = useSelector((state) => state.cart);
   console.log(cart);
 
-  const stripePromise = loadStripe(
-    "pk_test_51MkkYdSDNqeO4XdQYomowl6BFKux5KHkCQ3ZNlWZQMsh6UHp5lak0scvLEJdMj6CjWrtIY02vJEQaMJ8DcK7IOl2002RtdoDdf"
-  );
+  const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
   const BASE_URL = process.env.REACT_APP_SERVER_URL;
 

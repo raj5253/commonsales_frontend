@@ -67,7 +67,6 @@ const Products = ({ first }) => {
       </section>
       <ol className={styles.prodList}>
         {products &&
-          products !== "error" &&
           products.map((item, i) => {
             return (
               <li key={item.id} className={styles.prodItem}>

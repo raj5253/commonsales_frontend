@@ -10,7 +10,7 @@ export const fetchProductsData = () => {
 
   return async (dispatch) => {
     const fetchHandler = async () => {
-      const res = await fetch(`${BASE_URL}/`);
+      const res = await fetch(`${BASE_URL}/products`);
       const data = await res.json();
       // console.log(data);
       return data.products; //i wrote data.produts and resolving this took1hr

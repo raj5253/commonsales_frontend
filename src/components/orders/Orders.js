@@ -65,14 +65,9 @@ const Orders = () => {
           </ul>
         )}
       </div>
-      {/* {!fetchedOrder && (
-        <div style={{ textAlign: "center" }}>
-          <p> Could not connect to the server</p>
-        </div>
-      )} */}
       {fetchedOrder?.length === 0 && (
-        <div>
-          <h2>{"You"}</h2>
+        <div style={{ textAlign: "center" }}>
+          <h2>{"You have not ordered any product yet!"}</h2>
           <p>
             <Link to="/">view products !</Link>
           </p>
